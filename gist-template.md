@@ -74,8 +74,27 @@ The RegEx pattern ```a[bc]``` will match any string that has the character x fol
 ![image of the or operator that matches a string that has a x followed by a y or z from the list](./assets/images/or-example-2.png)
 
 ### Character Classes
+A character class is a set of characters that, when present in an input string, results in a match.
+
+**```\d```** - matches a single digit character.
+![image of the digit class](./assets/images/digit-class.png)
+
+**```\w```** - matches an alphanumeric character or underscore (a "word" character).
+![image of the word class](./assets/images/word-class.png)
+
+**```\s```** - matches a whitespace character, including tabs.
+![image of the whitespace class](./assets/images/space-class.png)
+
+**```\.```** - matches any character. Use this class carefully, as it can match any character and may not be as precise as using a character class or a negated character class.
 
 ### Flags
+Flags are properties that alter the behavior of a search on a given string.
+
+ **g** (global) - causes the search to restart from the end of the previous match, instead of stopping after the first match is found.
+
+**m** (multi-line) - when enabled, causes the caret (^) and dollar sign ($) to match the start and end of a line, instead of the start and end of the entire string.
+
+**i** (insensitive) - causes the search to be case-insensitive. For example, /xYz/i would match XyZ as well as xyz.
 
 ### Grouping and Capturing
 
