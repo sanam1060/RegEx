@@ -97,6 +97,15 @@ Flags are properties that alter the behavior of a search on a given string.
 **i** (insensitive) - causes the search to be case-insensitive. For example, /xYz/i would match XyZ as well as xyz.
 
 ### Grouping and Capturing
+Grouping is a way to combine a set of characters into a single unit.
+
+Examples:
+
+**```x(yz)```** - the parentheses create a **capturing group** with the value **yz**. The results of the match are stored in an array, which can be accessed using the group's index value."
+
+**```x(?:yz)```** - creates a **non-capturing group**, which is a group that does not capture its match and is not included in the array of results.
+
+**```x(?<hi>yz)```** - creates a named capturing group, which can be accessed later using the group's name in the same way you would access a dictionary value using its key.
 
 ### Bracket Expressions
 
