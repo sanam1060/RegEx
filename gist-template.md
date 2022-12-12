@@ -42,7 +42,36 @@ Examples:
 
 ### Quantifiers
 
+Quantifiers in RegEx are used to specify the number of times a character or group must appear in the input text for the RegEx pattern to match. For example, a quantifier can be used to specify that a certain character must appear exactly three times in a row for the RegEx pattern to match the input text.
+
+Examples:
+
+**```xyz*```** - matches a string that has **xy followed by zero or more z**.
+![image of quantifier that matches xy followed by zero or more c](./assets/images/xy-followed-by-zero-or-more-c.png)
+
+**```xyz+```** - matches a string that has **xy followed by one or more z**.
+
+**```xyz?```** - matches a string that has **xy followed by zero or one z**.
+
+**```xyz{2}```** - matches a string that has **xy followed by 2 z**.
+
+**```xyz{2,}```** - matches a string that has **xy followed by 2 or more z**.
+
+**```xyz{2,5}```** - matches a string that has **xy followed by 2 up to 5 z**.
+
+**```x(yz)*```** - matches a string that has **x followed by zero or more copies of the sequence yz**.
+
 ### OR Operator
+The Or operator, represented by ```|``` or ```[]``` in RegEx, is used to specify two or more alternative patterns. The RegEx will match the input text if it matches any of the specified alternative patterns. For example, the pattern cat|dog will match the input cat or the input dog, but not the input mouse.
+
+Examples:
+
+The RegEx pattern ```a(b|c)``` will match any string that has the character x followed by either y or z. For example, the pattern would match the input xyz, but not the input abc. This pattern uses the Or operator to specify that the character x must be followed by either y or z for the RegEx to match the input text.
+
+![image of the or operator that matches a string that has a x followed by y or z](./assets/images/or-example.png)
+
+The RegEx pattern ```a[bc]``` will match any string that has the character x followed by either y or z. This pattern uses a character class (enclosed in square brackets) to specify the list of allowed characters that may follow x. For example, the pattern would match the input xyz, but not the input abc. The character class allows the RegEx to match any character within the specified list that follows x.
+![image of the or operator that matches a string that has a x followed by a y or z from the list](./assets/images/or-example-2.png)
 
 ### Character Classes
 
