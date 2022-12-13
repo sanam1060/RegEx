@@ -4,7 +4,11 @@ Regular Expressions, also known as RegEx or RegExp, are used to extract specific
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+To match an email address using a regular expression, you can use the following pattern:
+
+```[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}```
+
+This pattern matches a string that contains a sequence of one or more characters that are either lowercase letters, numbers, or the special characters ```.```, ```_```, ```%```, ```+```, or ```-```, followed by an ```@``` symbol, followed by another sequence of one or more lowercase letters, numbers, or the special character ```.```, followed by a ```.``` symbol and two to four lowercase letters. This pattern should match most common email addresses, but it may not match all possible valid email addresses.
 
 ## Table of Contents
 
@@ -17,8 +21,6 @@ Briefly summarize the regex you will be describing and what you will explain. In
 - [Bracket Expressions](#bracket-expressions)
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
 - [Boundaries](#boundaries)
-- [Back-references](#back-references)
-- [Look-ahead and Look-behind](#look-ahead-and-look-behind)
 
 ## Regex Components
 
@@ -121,13 +123,16 @@ Examples:
 **[^a-zA-Z]** is a regular expression that matches any character that is not a letter in the English alphabet (either uppercase or lowercase). This expression can be used to match punctuation, numbers, and other non-alphabetic characters. For example, the string "Hello, world!" would match this expression, while the string "Hello world" would not.
 
 ### Greedy and Lazy Match
+In a greedy search, the regular expression engine repeats the search for a pattern as many times as possible, without trying to match the rest of the pattern until the end of the text. This means that the engine will try to find the longest possible match, even if that means that the rest of the pattern is not matched. In contrast, a lazy search uses the ```?``` character after a quantifier to specify that the search should stop after the first character match, and check the rest of the pattern to see if it matches as well. This means that the engine will try to find the shortest possible match, even if that means that the pattern is not fully matched. In general, greedy searches are more efficient, but lazy searches can be useful in some cases where the pattern is complex and the search needs to be more precise.
 
 ### Boundaries
+A word boundary is a position in a string where the character immediately before or after the position is a word character ```\w``` or a non-word character ```\W```. The regular expression ```\b``` is used to match these positions in the string, and can be thought of as a combination of the ```^``` and ```$``` anchors. The word boundary ```\b``` is used to match the following three positions in a string:
 
-### Back-references
-
-### Look-ahead and Look-behind
+At the start of a string, if the first character is a word character.
+Between two characters in the string, where one is a word character and the other is not.
+At the end of the string, if the last character is a word character.
+For example, the regular expression ```\bhello\b``` would match the string "hello world" but not the string "hello, world" or "hello123".
 
 ## Author
-
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+If you have any questions about the information provided in the Gist, please contact me. I will be happy to help.
+* https://github.com/sanam1060
