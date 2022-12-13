@@ -108,6 +108,17 @@ Examples:
 **```x(?<hi>yz)```** - creates a named capturing group, which can be accessed later using the group's name in the same way you would access a dictionary value using its key.
 
 ### Bracket Expressions
+A bracket expression allows you to specify a set of characters to match by enclosing them within square brackets (```[]```). The expression will match any single character that is a member of the set." For example, ```[abc]``` would match any single ```a```, ```b```, or ```c``` character.
+
+Examples:
+
+**```[xyz]```** - matches any single ```x```, ```y```, or ```z``` character in a string. This is equivalent to using the | (or) operator, as in ```x|y|z```. The expression can also be written as ```[x-z]```, which will match any single character that falls within the range ```x``` to ```z``` (inclusive) in ASCII or Unicode order.
+
+**```[a-fA-F0-9]```** is a regular expression that matches a single hexadecimal digit in a case-insensitive manner. Hexadecimal digits include the numbers 0-9 and the letters A-F (in both uppercase and lowercase forms).
+
+**[0-9]%** is a regular expression that matches a string of digits from 0 to 9 that appears immediately before a % sign. For example, the string "80% humidity" would match this expression, while the string "The humidity is 80%" would not.
+
+**[^a-zA-Z]** is a regular expression that matches any character that is not a letter in the English alphabet (either uppercase or lowercase). This expression can be used to match punctuation, numbers, and other non-alphabetic characters. For example, the string "Hello, world!" would match this expression, while the string "Hello world" would not.
 
 ### Greedy and Lazy Match
 
